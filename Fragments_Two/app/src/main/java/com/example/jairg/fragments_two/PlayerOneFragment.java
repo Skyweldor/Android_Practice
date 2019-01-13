@@ -13,7 +13,7 @@ public class PlayerOneFragment extends Fragment implements View.OnClickListener 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View theView = inflater.inflate(R.layout.activity_main, container, false);
+        View theView = inflater.inflate(R.layout.fragment_one, container, false);
 
         setupClickListeners(theView);
         return theView;

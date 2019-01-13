@@ -12,6 +12,8 @@
         android:layout_weight="1" />
 
     <fragment
+        class="com.example.jairg.fragments_two.PlayerOneDescriptionFragment"
+        android:id="@+id/FragmentTwo"
         android:layout_width="0px"
         android:layout_height="match_parent"
         android:layout_weight="1" />
