@@ -1,5 +1,6 @@
 package com.example.jairg.fragments_two;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -53,5 +54,9 @@ public class PlayerOneFragment extends Fragment implements View.OnClickListener 
         CharSequence classText = rb.getText();
 
         int index = changeIdToIndex(id);
+
+        Activity activity = getActivity();
+        PlayerOneFragementCoordinator coordinator = (PlayerOneFragementCoordinator) activity;
+        coordinator.onSelectedPrefChanged(index);
     }
 }
