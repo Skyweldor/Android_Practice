@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="preferencesDescriptions">
+        <item>Strength is the age old trait know since the first ape slapped another
+        ape. Picking strength grants bonuses in STR and DEF while also providing faster
+        XP gain in those skills.</item>
+        <item>
+            Cunning relies on knowing when to strike. By using the environment to your
+            advantage, cunning grants bonuses in CRIT and ACC while also providing faster XP
+            gain in those skills.
+        </item>
+        <item>
+            Agility helps a hero move more nimbly out of the way of harm and into the way of a
+            quick strike. Opting for agility grants bonuses in SPD and EVA while also providing
+            faster XP gain in those skills.
+        </item>
+    </string-array>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fragments_Two</string>
+    <string name="strengthTitle">Strength</string>
+    <string name="cunningTitle">Cunning</string>
+    <string name="agilityTitle">Agility</string>
+    <string name="playerDefault">This is a placeholder, default description.</string>
+</resources>
