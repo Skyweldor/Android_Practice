@@ -25,10 +25,16 @@ public class PlayerOneDescriptionFragment extends Fragment {
         _descriptionView = (TextView) fragmentView.findViewById(R.id.playerDescription);
         _preferenceDescriptions = getResources().getStringArray(R.array.preferencesDescriptions);
 
-        _prefIndex = _preferenceIndexDefaultValue;
+        _prefIndex = savedInstanceState == null ? _preferenceIndexDefaultValue :
+        savedInstanceState.getInt(_preferenceIndexStateKey, _preferenceIndexDefaultValue);
 
         setDescription(_prefIndex);
         return fragmentView;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putInt(_preferenceIndexStateKey, _prefIndex);
     }
 
     public void setDescription(int prefIndex) {

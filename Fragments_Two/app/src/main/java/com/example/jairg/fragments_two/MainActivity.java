@@ -18,4 +18,5 @@ public class MainActivity extends AppCompatActivity implements PlayerOneFragemen
                 fragmentManager.findFragmentById(R.id.FragmentTwo);
         playerOneDescriptionFragment.setDescription(index);
     }
+
 }
