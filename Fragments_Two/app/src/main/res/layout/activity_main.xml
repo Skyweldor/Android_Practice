@@ -5,14 +5,14 @@
     android:orientation="horizontal">
 
     <fragment
-        class="com.example.jairg.fragments_two.PlayerOneFragment"
+        class="com.example.jairg.fragments_two.Fragments.PlayerOneFragment"
         android:id="@+id/fragmentOne"
         android:layout_width="0px"
         android:layout_height="match_parent"
         android:layout_weight="1" />
 
     <fragment
-        class="com.example.jairg.fragments_two.PlayerOneDescriptionFragment"
+        class="com.example.jairg.fragments_two.Fragments.PlayerOneDescriptionFragment"
         android:id="@+id/FragmentTwo"
         android:layout_width="0px"
         android:layout_height="match_parent"

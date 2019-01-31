@@ -1,4 +1,4 @@
-package com.example.jairg.fragments_two;
+package com.example.jairg.fragments_two.Fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
+
+import com.example.jairg.fragments_two.CharacterActions;
+import com.example.jairg.fragments_two.R;
 
 public class PlayerOneFragment extends Fragment implements View.OnClickListener {
     int index = 0;

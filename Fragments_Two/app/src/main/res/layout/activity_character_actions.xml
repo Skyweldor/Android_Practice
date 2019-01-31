@@ -12,4 +12,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <fragment
+        android:id="@+id/fragmentFive"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        />
+
+    <fragment
+        android:id="@+id/fragmentFour"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
 </LinearLayout>
