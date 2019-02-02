@@ -16,13 +16,17 @@ import com.example.jairg.fragments_two.Utils.GameStatsOpenDbHelper;
 
 public class MainActivity extends AppCompatActivity implements PlayerOneFragementCoordinator {
 
-    private static final String DATABASE_TAG = "DATABASE";
+    private static final String DATABASE_TAG = "DATABASE_CHECK";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        insertPlayer();
+
+        GameStatsOpenDbHelper helper = new GameStatsOpenDbHelper(this);
+
+        insertPlayer(helper);
+        readData(helper);
     }
 
     public void onSelectedPrefChanged(int index) {
@@ -32,9 +36,9 @@ public class MainActivity extends AppCompatActivity implements PlayerOneFragemen
         playerOneDescriptionFragment.setDescription(index);
     }
 
-    public void readData() {
-        GameStatsOpenDbHelper helper = new GameStatsOpenDbHelper(this);
+    public Cursor readData(GameStatsOpenDbHelper helper) {
         SQLiteDatabase db = helper.getReadableDatabase();
+
 
         String[] projection = {
                 BaseColumns._ID,
@@ -60,20 +64,31 @@ public class MainActivity extends AppCompatActivity implements PlayerOneFragemen
                 sortOrder
         );
 
-        Log.d(DATABASE_TAG, cursor.getString(0));
+        int i = cursor.getCount();
+        Log.d(DATABASE_TAG, String.valueOf(i));
+
+        return cursor;
     }
 
-    public void insertPlayer() {
-        GameStatsOpenDbHelper helper = new GameStatsOpenDbHelper(this);
+    public void insertPlayer(GameStatsOpenDbHelper helper) {
         SQLiteDatabase db = helper.getWritableDatabase();
 
+
+        Cursor c = readData(helper);
+
+        int i = c.getCount();
+
         ContentValues values = new ContentValues();
+        if (i != 0){
+            return;
+        }
         values.put(GameStatsDatabaseContract.PlayerStats.COLUMN_PLAYER_ID, "player_one");
         values.put(GameStatsDatabaseContract.PlayerStats.COLUMN_PLAYER_NAME, "Player One");
         values.put(GameStatsDatabaseContract.PlayerStats.COLUMN_PLAYER_GOLD, 420);
         values.put(GameStatsDatabaseContract.PlayerStats.COLUMN_PLAYER_XP, 15);
         values.put(GameStatsDatabaseContract.PlayerStats.COLUMN_PLAYER_AP, 10);
-        long newRowId = db.insert(GameStatsDatabaseContract.PlayerStats.TABLE_NAME, null, values);
-    }
+        long newRowId = db.replace(GameStatsDatabaseContract.PlayerStats.TABLE_NAME, null, values);
 
+        Log.d(DATABASE_TAG, String.valueOf(db));
+    }
 }

@@ -5,8 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class GameStatsOpenDbHelper extends SQLiteOpenHelper {
-    public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "GamsStats.db";
+    public static final int DATABASE_VERSION = 2;
+    public static final String DATABASE_NAME = "GameStats.db";
 
     public GameStatsOpenDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

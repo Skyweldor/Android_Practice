@@ -7,7 +7,12 @@ public class GameStatsDatabaseContract {
     }
 
     public static final class PlayerStats implements BaseColumns {
+
+        //Table Name
         public static final String TABLE_NAME = "player_stats";
+
+        //Column Names
+        public static final String _ID = BaseColumns._ID;
         public static final String COLUMN_PLAYER_ID = "player_id";
         public static final String COLUMN_PLAYER_NAME = "player_name";
         public static final String COLUMN_PLAYER_GOLD = "player_gold";
@@ -17,13 +22,13 @@ public class GameStatsDatabaseContract {
         // insertStats("player_id", "player_name", player_gold, player_xp, player_ap);
 
         public static final String SQL_CREATE_TABLE =
-                "CREATE_TABLE " + TABLE_NAME + " (" +
+                "CREATE TABLE " + TABLE_NAME + " (" +
                         _ID + " INTEGER PRIMARY KEY, " +
-                        COLUMN_PLAYER_ID + " TEXT UNIQUE NOT NULL, " +
-                        COLUMN_PLAYER_NAME + " TEXT UNIQUE NOT NULL" +
+                        COLUMN_PLAYER_ID + " TEXT NOT NULL, " +
+                        COLUMN_PLAYER_NAME + " TEXT NOT NULL, " +
                         COLUMN_PLAYER_GOLD + " INT, " +
-                        COLUMN_PLAYER_XP + "INT, " +
-                        COLUMN_PLAYER_AP + "INT)";
+                        COLUMN_PLAYER_XP + " INT, " +
+                        COLUMN_PLAYER_AP + " INT)";
 
         public static final String SQL_DELETE_TABLE =
                 "DROP TABLE IF EXISTS " + TABLE_NAME;
@@ -31,6 +36,8 @@ public class GameStatsDatabaseContract {
 
     public static final class GameCharacterStats implements BaseColumns {
         public static final String TABLE_NAME = "gameCharacter_stats";
+
+        public static final String _ID = BaseColumns._ID;
         public static final String COLUMN_CHARACTER_ID = "character_id";
         public static final String COLUMN_CHARACTER_STR = "character_str";
         public static final String COLUMN_CHARACTER_HP = "character_hp";
@@ -47,7 +54,7 @@ public class GameStatsDatabaseContract {
         public static final String COLUMN_ITEM_5 = "item_5"; // Bottoms
 
         public static final String SQL_CREATE_TABLE =
-                "CREATE_TABLE " + TABLE_NAME + " (" +
+                "CREATE TABLE " + TABLE_NAME + " (" +
                         _ID + " INTEGER PRIMARY KEY, " +
                         COLUMN_CHARACTER_ID + " TEXT NOT NULL, " +
                         COLUMN_CHARACTER_STR + " INT NOT NULL, " +
@@ -58,10 +65,10 @@ public class GameStatsDatabaseContract {
                         COLUMN_CHARACTER_EVA + " INT NOT NULL, " +
                         COLUMN_CHARACTER_NAME + " INT NOT NULL, " +
                         COLUMN_CHARACTER_DESCRIPTION + " INT NOT NULL, " +
-                        COLUMN_ITEM_1 + " TEXT , " +
-                        COLUMN_ITEM_2 + " TEXT , " +
-                        COLUMN_ITEM_3 + " TEXT , " +
-                        COLUMN_ITEM_4 + " TEXT , " +
+                        COLUMN_ITEM_1 + " TEXT, " +
+                        COLUMN_ITEM_2 + " TEXT, " +
+                        COLUMN_ITEM_3 + " TEXT, " +
+                        COLUMN_ITEM_4 + " TEXT, " +
                         COLUMN_ITEM_5 + " TEXT)";
 
         public static final String SQL_DELETE_TABLE =
@@ -70,6 +77,8 @@ public class GameStatsDatabaseContract {
 
     public static final class ItemStats implements BaseColumns {
         public static final String TABLE_NAME = "item_stats";
+
+        public static final String _ID = BaseColumns._ID;
         public static final String COLUMN_ITEM_ID = "item_id";
         public static final String COLUMN_ITEM_STR = "item_str";
         public static final String COLUMN_ITEM_HP = "item_hp";
@@ -81,7 +90,7 @@ public class GameStatsDatabaseContract {
         public static final String COLUMN_ITEM_DESCRIPTION = "item_description";
 
         public static final String SQL_CREATE_TABLE =
-                "CREATE_TABLE " + TABLE_NAME + " (" +
+                "CREATE TABLE " + TABLE_NAME + " (" +
                         _ID + " INTEGER PRIMARY KEY, " +
                         COLUMN_ITEM_ID + " TEXT NOT NULL, " +
                         COLUMN_ITEM_STR + " INT, " +
